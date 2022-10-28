@@ -4,6 +4,8 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/hveeramani/.oh-my-zsh"
 
+# caffeinate -t 10000 &
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -68,7 +70,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions colored-man-pages command-not-found thefuck globalias)
+plugins=(git zsh-autosuggestions colored-man-pages command-not-found globalias)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,9 +106,14 @@ alias v="nvim"
 alias edit="nvim"
 alias reload="source ~/.zshrc"
 alias nvim_config="nvim ~/.config/nvim/init.vim"
+alias vim_config="nvim ~/.vimrc"
+alias zsh_config="nvim ~/.zshrc"
+alias kara_config="nvim ~/.config/karabiner/karabiner.json"
 alias mount_mbig='sshfs devsftp:/bb/mbig/mbig8408/ /Users/hveeramani/Documents/mybig -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=mybig,allow_other'
 alias unmount_mbig="umount -f /Users/hveeramani/Documents/mybig"
 alias remote="exec /Users/hveeramani/.toolkit/tmp/launch_ssh"
+alias remote_cisl="exec /Users/hveeramani/.toolkit/tmp/launch_ssh_cisl"
+alias remote_nylx="exec /Users/hveeramani/.toolkit/tmp/launch_ssh_nylxdev4"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
@@ -125,4 +132,10 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbo
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+eval "$(pyenv init -)" # Pyenv init
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
