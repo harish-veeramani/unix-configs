@@ -50,6 +50,8 @@ set encoding=utf-8
 
 "show lightline
 "set laststatus=2
+set shiftwidth=4
+set expandtab
 
 "disable edit status
 set noshowmode
